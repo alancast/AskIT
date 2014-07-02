@@ -5,24 +5,6 @@
 	position: absolute;
 }
 
-#homeButton{
-	position: absolute;
-	margin-left: 160px;
-	margin-top: 21px;
-	height: 30px;
-	border-radius: 5px;
-	background-color: #FFFFFF;
-}
-
-#profileButton{
-	position: absolute;
-	margin-left: 600px;
-	margin-top: 21px;
-	height: 30px;
-	border-radius: 5px;
-	background-color: #FFFFFF;
-}
-
 #searchBox{
 	border-style: solid;
 	border-color:#4B7B9F;
