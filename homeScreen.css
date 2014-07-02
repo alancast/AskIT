@@ -98,3 +98,32 @@ body ul li:before {
 	border-bottom: 3px solid #0096d6;
 }
 
+#scrollableHomeFeedHeader{
+	position: absolute;
+	margin-top: 210px;
+	margin-left: 260px;
+	width: 690px;
+	height: 32px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+#scrollableHomeFeed{
+	position: absolute;
+	margin-top: 242px;
+	margin-left: 260px;
+	width: 690px;
+	height: 243px;
+	overflow: auto;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+td {
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+}
+
+
