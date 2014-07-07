@@ -29,7 +29,7 @@
 	width: 960px;
 	height: 35px;
 	position: absolute;
-	margin-top: 960px;
+	margin-top: 925px;
 }
 
 #footerPic{
@@ -126,4 +126,59 @@ td {
   	white-space: nowrap;
 }
 
+#unansweredScrollableHeader{
+	position: absolute;
+	margin-top: 525px;
+	margin-left: 260px;
+	width: 340px;
+	height: 32px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+#unansweredScrollable{
+	position: absolute;
+	margin-top: 557px;
+	margin-left: 260px;
+	width: 340px;
+	height: 338px;
+	overflow: auto;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+#recentlyAnsweredScrollableHeader{
+	position: absolute;
+	margin-top: 525px;
+	margin-left: 610px;
+	width: 340px;
+	height: 32px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+#recentlyAnsweredScrollable{
+	position: absolute;
+	margin-top: 557px;
+	margin-left: 610px;
+	width: 340px;
+	height: 338px;
+	overflow: auto;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+#upvotesDiv{
+	margin: 0px;
+	padding: 0px;
+	background-color: solid blue;
+}
+
+#upvotesCell{
+	margin: 0px;
+	padding: 0px;
+	background-color: solid blue;
+}
 
