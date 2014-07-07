@@ -1,184 +1,183 @@
-#header{
-	background-color: #0096d6;
-	width: 960px;
-	height: 75px;
-	position: absolute;
+#header {
+    background-color: #0096d6;
+    width: 960px;
+    height: 75px;
+    position: absolute;
 }
-
-#searchBox{
-	border-style: solid;
-	border-color:#4B7B9F;
-	border-width: 1px;
-	position: absolute;
-	margin-left: 690px;
-	margin-top: 21px;
-	height: 30px;
-	border-radius: 5px;
+#searchBox {
+    border-style: solid;
+    border-color:#4B7B9F;
+    border-width: 1px;
+    position: absolute;
+    margin-left: 690px;
+    margin-top: 21px;
+    height: 30px;
+    border-radius: 5px;
 }
-
-#headerLogoPic{
-	position: absolute;
-	height: 61px;
-	width: 119px;
-	margin-left: 23px;
-	margin-top: 7px;
+#headerLogoPic {
+    position: absolute;
+    height: 61px;
+    width: 119px;
+    margin-left: 23px;
+    margin-top: 7px;
 }
-
-#footer{
-	background-color: teal;
-	width: 960px;
-	height: 35px;
-	position: absolute;
-	margin-top: 925px;
+#footer {
+    background-color: teal;
+    width: 960px;
+    height: 35px;
+    position: absolute;
+    margin-top: 925px;
 }
-
-#footerPic{
-	height: 35px;
-	width: 960px;
-	margin:0px;
+#footerPic {
+    height: 35px;
+    width: 960px;
+    margin:0px;
 }
-
-body h1{
-	position: absolute;
-	margin-top: 130px;
-	margin-left: 10px;
-	width: 220px;
-	height: 30px;
-	font-size: 24px;
-	border-bottom: 3px solid #0096d6;
+body h1 {
+    position: absolute;
+    margin-top: 130px;
+    margin-left: 10px;
+    width: 220px;
+    height: 30px;
+    font-size: 24px;
+    border-bottom: 3px solid #0096d6;
 }
-
-body ul{
-	position: absolute;
-	margin-top: 170px;
-	margin-left: 50px;
-	width: 220px;
-	height: 30px;
-	font-size: 18px;
+body ul {
+    position: absolute;
+    margin-top: 170px;
+    margin-left: 50px;
+    width: 220px;
+    height: 30px;
+    font-size: 18px;
 }
-
-body ul li{
-	margin-top: 10px;
-	list-style-type: none;
-	before
+body ul li {
+    margin-top: 10px;
+    list-style-type: none;
+    before
 }
-
 body ul li:before {
-    content: "-";
+    content:"-";
     width: 1px;
     margin-right: 5px;
 }
-
-#horizontalBar{
-	position: absolute;
-	background-color: #0096d6;
-	width: 3px;
-	height: 760px;
-	margin-top: 85px;
-	margin-left: 250px;
+#horizontalBar {
+    position: absolute;
+    background-color: #0096d6;
+    width: 3px;
+    height: 760px;
+    margin-top: 85px;
+    margin-left: 250px;
 }
-
-#trendingSidebarBackground{
-	position: absolute;
-	background-color: #0096d6;
-	margin-left: 10px;
-	margin-top: 550px;
-	border-radius: 5px;
-	height: 300px;
-	width: 220px;
+#trendingSidebarBackground {
+    position: absolute;
+    background-color: #0096d6;
+    margin-left: 10px;
+    margin-top: 550px;
+    border-radius: 5px;
+    height: 300px;
+    width: 220px;
 }
-
-#trendingSidebar h1{
-	position: absolute;
-	margin-top: 495px;
-	margin-left: 10px;
-	width: 220px;
-	height: 30px;
-	font-size: 24px;
-	border-bottom: 3px solid #0096d6;
+#trendingSidebar h1 {
+    position: absolute;
+    margin-top: 495px;
+    margin-left: 10px;
+    width: 220px;
+    height: 30px;
+    font-size: 24px;
+    border-bottom: 3px solid #0096d6;
 }
-
-#scrollableHomeFeedHeader{
-	position: absolute;
-	margin-top: 210px;
-	margin-left: 260px;
-	width: 690px;
-	height: 32px;
-	border-top: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+#scrollableHomeFeedHeader {
+    position: absolute;
+    margin-top: 210px;
+    margin-left: 260px;
+    width: 690px;
+    height: 32px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
-#scrollableHomeFeed{
-	position: absolute;
-	margin-top: 242px;
-	margin-left: 260px;
-	width: 690px;
-	height: 243px;
-	overflow: auto;
-	border-bottom: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+#scrollableHomeFeed {
+    position: absolute;
+    margin-top: 242px;
+    margin-left: 260px;
+    width: 690px;
+    height: 243px;
+    overflow: auto;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
-
 td {
-  	overflow: hidden;
-  	text-overflow: ellipsis;
-  	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-
-#unansweredScrollableHeader{
-	position: absolute;
-	margin-top: 525px;
-	margin-left: 260px;
-	width: 340px;
-	height: 32px;
-	border-top: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+#unansweredScrollableHeader {
+    position: absolute;
+    margin-top: 525px;
+    margin-left: 260px;
+    width: 340px;
+    height: 32px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
-#unansweredScrollable{
-	position: absolute;
-	margin-top: 557px;
-	margin-left: 260px;
-	width: 340px;
-	height: 338px;
-	overflow: auto;
-	border-bottom: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+#unansweredScrollable {
+    position: absolute;
+    margin-top: 557px;
+    margin-left: 260px;
+    width: 340px;
+    height: 338px;
+    overflow: auto;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
-
-#recentlyAnsweredScrollableHeader{
-	position: absolute;
-	margin-top: 525px;
-	margin-left: 610px;
-	width: 340px;
-	height: 32px;
-	border-top: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+#recentlyAnsweredScrollableHeader {
+    position: absolute;
+    margin-top: 525px;
+    margin-left: 610px;
+    width: 340px;
+    height: 32px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
-#recentlyAnsweredScrollable{
-	position: absolute;
-	margin-top: 557px;
-	margin-left: 610px;
-	width: 340px;
-	height: 338px;
-	overflow: auto;
-	border-bottom: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+#recentlyAnsweredScrollable {
+    position: absolute;
+    margin-top: 557px;
+    margin-left: 610px;
+    width: 340px;
+    height: 338px;
+    overflow: auto;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
-
-#upvotesDiv{
-	margin: 0px;
-	padding: 0px;
-	background-color: solid blue;
+#upvotesDiv {
+    margin: 0px;
+    padding: 0px;
+    height: 125px;
 }
-
-#upvotesCell{
-	margin: 0px;
-	padding: 0px;
-	background-color: solid blue;
+#upvotesCell {
+    margin: 0px;
+    padding: 0px;
 }
-
+#upArrow {
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 5px;
+}
+#downArrow {
+    position: absolute;
+    margin-top: 75px;
+    margin-left: 5px;
+}
+#upvotesText {
+    position: absolute;
+    font-size: 18px;
+    margin-top: 53px;
+    margin-left: 3px;
+    width: 24px;
+    text-align: center;
+}
