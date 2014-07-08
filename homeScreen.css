@@ -6,7 +6,7 @@
 }
 #searchBox {
     border-style: solid;
-    border-color:#4B7B9F;
+    border-color: #4B7B9F;
     border-width: 1px;
     position: absolute;
     margin-left: 690px;
@@ -31,7 +31,7 @@
 #footerPic {
     height: 35px;
     width: 960px;
-    margin:0px;
+    margin: 0px;
 }
 body h1 {
     position: absolute;
@@ -56,7 +56,7 @@ body ul li {
     before
 }
 body ul li:before {
-    content:"-";
+    content: "-";
     width: 1px;
     margin-right: 5px;
 }
@@ -88,7 +88,7 @@ body ul li:before {
 }
 #scrollableHomeFeedHeader {
     position: absolute;
-    margin-top: 210px;
+    margin-top: 220px;
     margin-left: 260px;
     width: 690px;
     height: 32px;
@@ -98,82 +98,76 @@ body ul li:before {
 }
 #scrollableHomeFeed {
     position: absolute;
-    margin-top: 242px;
+    margin-top: 252px;
     margin-left: 260px;
     width: 690px;
-    height: 243px;
+    height: 233px;
     overflow: auto;
     border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
-
 td {
-  	overflow: hidden;
-  	text-overflow: ellipsis;
-  	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-
-#unansweredScrollableHeader{
-	position: absolute;
-	margin-top: 525px;
-	margin-left: 260px;
-	width: 340px;
-	height: 32px;
-	border-top: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+#unansweredScrollableHeader {
+    position: absolute;
+    margin-top: 525px;
+    margin-left: 260px;
+    width: 340px;
+    height: 32px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
-#unansweredScrollable{
-	position: absolute;
-	margin-top: 557px;
-	margin-left: 260px;
-	width: 340px;
-	height: 338px;
-	overflow: auto;
-	border-bottom: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+#unansweredScrollable {
+    position: absolute;
+    margin-top: 557px;
+    margin-left: 260px;
+    width: 340px;
+    height: 338px;
+    overflow: auto;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
-
-#recentlyAnsweredScrollableHeader{
-	position: absolute;
-	margin-top: 525px;
-	margin-left: 610px;
-	width: 340px;
-	height: 32px;
-	border-top: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+#recentlyAnsweredScrollableHeader {
+    position: absolute;
+    margin-top: 525px;
+    margin-left: 610px;
+    width: 340px;
+    height: 32px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
-#recentlyAnsweredScrollable{
-	position: absolute;
-	margin-top: 557px;
-	margin-left: 610px;
-	width: 340px;
-	height: 338px;
-	overflow: auto;
-	border-bottom: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+#recentlyAnsweredScrollable {
+    position: absolute;
+    margin-top: 557px;
+    margin-left: 610px;
+    width: 340px;
+    height: 338px;
+    overflow: auto;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
-
-#upvotesDiv{
-	margin: 0px;
-	padding: 0px;
-	background-color: solid blue;
+#upvotesDiv {
+    margin: 0px;
+    padding: 0px;
+    background-color: solid blue;
 }
-
-#upvotesCell{
-	margin: 0px;
-	padding: 0px;
-	background-color: solid blue;
+#upvotesCell {
+    margin: 0px;
+    padding: 0px;
+    background-color: solid blue;
 }
-
-#askItButton{
-	position: absolute;
-	margin-top: 85px;
-	margin-left: 260px;
+#askItButton {
+    position: absolute;
+    margin-top: 85px;
+    margin-left: 260px;
 }
 td {
     overflow: hidden;
@@ -248,4 +242,46 @@ td {
     margin-left: 3px;
     width: 24px;
     text-align: center;
+}
+#topicUnansweredScrollableHeader {
+    position: absolute;
+    margin-top: 280px;
+    margin-left: 260px;
+    width: 340px;
+    height: 32px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+#topicUnansweredScrollable {
+    position: absolute;
+    margin-top: 312px;
+    margin-left: 260px;
+    width: 340px;
+    height: 548px;
+    overflow: auto;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+#topicRecentlyAnsweredScrollableHeader {
+    position: absolute;
+    margin-top: 280px;
+    margin-left: 610px;
+    width: 340px;
+    height: 32px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+#topicRecentlyAnsweredScrollable {
+    position: absolute;
+    margin-top: 312px;
+    margin-left: 610px;
+    width: 340px;
+    height: 548px;
+    overflow: auto;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
