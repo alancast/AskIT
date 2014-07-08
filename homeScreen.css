@@ -175,7 +175,11 @@ td {
 	margin-top: 85px;
 	margin-left: 260px;
 }
-
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 #unansweredScrollableHeader {
     position: absolute;
     margin-top: 525px;
@@ -245,4 +249,3 @@ td {
     width: 24px;
     text-align: center;
 }
-
