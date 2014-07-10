@@ -337,11 +337,18 @@ td {
 }
 .Text {
     width: 690px;
-    height: 80px;
+    max-height: 80px;
+    min-height: 80px;
+    resize: none;
+    font-size: 18px;
+    overflow-y: scroll;
 }
 .TextShort {
     width: 690px;
     height: 30px;
+    resize: none;
+    font-size: 18px;
+    overflow-y: scroll;
 }
 #subscribedTopicsScrollable {
     position: absolute;
