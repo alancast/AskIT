@@ -285,3 +285,112 @@ td {
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
+#nameBox {
+    font-size: 36px;
+    position: absolute;
+    margin-left: 390px;
+    margin-top: 105px;
+}
+#jobBox {
+    font-size: 14px;
+    position: absolute;
+    margin-top: 145px;
+    margin-left: 390px;
+}
+#orgBox {
+    font-size: 14px;
+    position: absolute;
+    margin-top: 175px;
+    margin-left: 390px;
+}
+#descriptionBox {
+    position: absolute;
+    margin-top: 250px;
+    margin-left: 260px;
+    height: 120px;
+    width: 690px;
+    text-align: center;
+    font-size: 24px;
+}
+#expertiseBox {
+    position: absolute;
+    margin-top: 380px;
+    margin-left: 260px;
+    height: 60px;
+    width: 690px;
+    text-align: center;
+    font-size: 24px;
+}
+#interestBox {
+    position: absolute;
+    margin-top: 460px;
+    margin-left: 260px;
+    height: 60px;
+    width: 690px;
+    text-align: center;
+    font-size: 24px;
+}
+#profilePic {
+    position: absolute;
+    margin-left: 260px;
+    margin-top: 95px;
+}
+.Text {
+    width: 690px;
+    height: 80px;
+}
+.TextShort {
+    width: 690px;
+    height: 30px;
+}
+#subscribedTopicsScrollable {
+    position: absolute;
+    margin-top: 580px;
+    margin-left: 260px;
+    width: 210px;
+    height: 310px;
+    overflow: auto;
+    border: 1px solid black;
+}
+#questionsAskedHeader {
+    position: absolute;
+    margin-top: 580px;
+    margin-left: 490px;
+    width: 220px;
+    height: 32px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+#questionsAskedScrollable {
+    position: absolute;
+    margin-top: 612px;
+    margin-left: 490px;
+    width: 220px;
+    height: 278px;
+    overflow: auto;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+#questionsAnsweredHeader {
+    position: absolute;
+    margin-top: 580px;
+    margin-left: 730px;
+    width: 220px;
+    height: 32px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+#questionsAnsweredScrollable {
+    position: absolute;
+    margin-top: 612px;
+    margin-left: 730px;
+    width: 220px;
+    height: 278px;
+    overflow: auto;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
