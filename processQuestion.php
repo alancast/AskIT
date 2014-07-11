@@ -18,25 +18,40 @@ mysqli_query($link,$db);
 // } else {
 //   echo "Error creating database: " . mysqli_error($link);
 // }
-//Create Table for user if it doesn't already exist
-$name = mysql_real_escape_string($_POST['username_input']);
+//Create Table for question if it doesn't already exist
+$name = mysql_real_escape_string("Questions");
 $query = "CREATE TABLE IF NOT EXISTS my_db.".$name." (
     PID INT NOT NULL AUTO_INCREMENT,
     PRIMARY KEY(PID),
-    username CHAR(50),
-    JobTitle CHAR(50),
-    Expertise VARCHAR(1000),
-    Skills VARCHAR(1000),
-    Interests VARCHAR(1000))";
+    Question VARCHAR(5000),
+    Description VARCHAR(5000),
+    username CHAR(30),
+    userid INT,
+    up INT,
+    down INT,
+    time TIMESTAMP,
+    tags VARCHAR(5000))";
 mysqli_query($link,$query);
-// $number_of_days = 30 ;
-// $date_of_expiry = time() + 60 * 60 * 24 * $number_of_days ;
-// setcookie("username",$name,$date_of_expiry);
+
+// escape variables for security
+$question = mysqli_real_escape_string($link, $_POST['questionBox']);
+$description = mysqli_real_escape_string($link, $_POST['descriptionBox']);
+$tags = mysqli_real_escape_string($link, $_POST['tagBox']);
+//$username = mysqli_real_escape_string($_COOKIE['username']);
+
+
+$sql= "INSERT INTO my_db.Questions (Question, Description, tags)
+VALUES ('$question', '$description', '$tags')";
 // if (mysqli_query($link,$query)) {
 //   echo "Table persons created successfully";
 // } else {
 //   echo "Error creating table: " . mysqli_error($link);
 // }
+if (!mysqli_query($link,$sql)) {
+  die('Error: ' . mysqli_error($sql));
+}
+
+mysqli_close($link);
 
 header('Location: /homeScreen.html');
 
