@@ -6,8 +6,8 @@
     <title>AskIT</title>
     <div id="header">
         <img src="Images/CiscoLogo.png" id="headerLogoPic" />
-        <button type="button" class="btn btn-default" onclick="location.href ='homeScreen.html'" style="position: absolute; margin-left: 160px; margin-top: 21px;">Home</button>
-        <button type="button" class="btn btn-default" onclick="location.href ='editProfile.html'" style="position: absolute; margin-left: 580px; margin-top: 21px;">Edit Profile</button>
+        <button type="button" class="btn btn-default" onclick="location.href ='homeScreen.php'" style="position: absolute; margin-left: 160px; margin-top: 21px;">Home</button>
+        <button type="button" class="btn btn-default" onclick="location.href ='editProfile.php'" style="position: absolute; margin-left: 580px; margin-top: 21px;">Edit Profile</button>
         <table cellpadding="0px" cellspacing="0px">
             <tr>
                 <td id="searchBox">
@@ -22,34 +22,34 @@
 <body>
     <h1>Topics</h1>
     <ul>
-        <a href="webTopic.html">
+        <a href="webTopic.php">
             <li>Web</li>
         </a>
-        <a href="iOSTopic.html">
+        <a href="iOSTopic.php">
             <li>iOS</li>
         </a>
-        <a href="androidTopic.html">
+        <a href="androidTopic.php">
             <li>Android</li>
         </a>
-        <a href="javaTopic.html">
+        <a href="javaTopic.php">
             <li>Java</li>
         </a>
-        <a href="iRiseTopic.html">
+        <a href="iRiseTopic.php">
             <li>iRise</li>
         </a>
-        <a href="tableauTopic.html">
+        <a href="tableauTopic.php">
             <li>Tableau</li>
         </a>
-        <a href="agileTopic.html">
+        <a href="agileTopic.php">
             <li>Agile</li>
         </a>
-        <a href="UXTopic.html">
+        <a href="UXTopic.php">
             <li>UX</li>
         </a>
-        <a href="routersTopic.html">
+        <a href="routersTopic.php">
             <li>Routers</li>
         </a>
-        <a href="webExTopic.html">
+        <a href="webExTopic.php">
             <li>WebEx Social</li>
         </a>
     </ul>
@@ -61,7 +61,7 @@
         </div>
     </div>
     <div id="askItButton">
-        <a href="AskQuestion.html">
+        <a href="AskQuestion.php">
             <img src="Images/havequestionlongshort.jpg" onmouseover="this.src='Images/askITLongShort.jpg';" onmouseout="this.src='Images/havequestionlongshort.jpg';" height=98 width=700></img>
         </a>
     </div>
@@ -98,10 +98,10 @@
                     <td>allancas</td>
                     <td id="upvotesCell">
                         <div id="upvotesDiv">
-                            <a href="alexIntro.html">
+                            <a href="alexIntro.php">
                                 <img src="Images/up.png" id="upArrow" />
                             </a>
-                            <a href="alexIntro.html">
+                            <a href="alexIntro.php">
                                 <img src="Images/down.png" id="downArrow" />
                             </a>
                             <p id="upvotesText">12</p>

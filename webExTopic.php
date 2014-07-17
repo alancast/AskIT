@@ -98,10 +98,10 @@
                     <td>allancas</td>
                     <td id="upvotesCell">
                         <div id="upvotesDiv">
-                            <a href="alexIntro.html">
+                            <a href="alexIntro.php">
                                 <img src="Images/up.png" id="upArrow" />
                             </a>
-                            <a href="alexIntro.html">
+                            <a href="alexIntro.php">
                                 <img src="Images/down.png" id="downArrow" />
                             </a>
                             <p id="upvotesText">12</p>

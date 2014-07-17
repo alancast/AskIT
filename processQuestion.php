@@ -54,7 +54,7 @@ if (!mysqli_query($link,$sql)) {
 
 mysqli_close($link);
 
-header('Location: /homeScreen.html');
+header('Location: /homeScreen.php');
 
 ?>
 

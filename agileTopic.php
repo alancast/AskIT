@@ -22,31 +22,31 @@
 <body>
     <h1>Topics</h1>
     <ul>
-        <a href="webTopic.html">
+        <a href="webTopic.php">
             <li>Web</li>
         </a>
-        <a href="iOSTopic.html">
+        <a href="iOSTopic.php">
             <li>iOS</li>
         </a>
-        <a href="androidTopic.html">
+        <a href="androidTopic.php">
             <li>Android</li>
         </a>
-        <a href="javaTopic.html">
+        <a href="javaTopic.php">
             <li>Java</li>
         </a>
-        <a href="iRiseTopic.html">
+        <a href="iRiseTopic.php">
             <li>iRise</li>
         </a>
-        <a href="tableauTopic.html">
+        <a href="tableauTopic.php">
             <li>Tableau</li>
         </a>
-        <a href="agileTopic.html">
+        <a href="agileTopic.php">
             <li>Agile</li>
         </a>
-        <a href="UXTopic.html">
+        <a href="UXTopic.php">
             <li>UX</li>
         </a>
-        <a href="routersTopic.html">
+        <a href="routersTopic.php">
             <li>Routers</li>
         </a>
         <a href="webExTopic.php">
@@ -98,10 +98,10 @@
                     <td>allancas</td>
                     <td id="upvotesCell">
                         <div id="upvotesDiv">
-                            <a href="alexIntro.html">
+                            <a href="alexIntro.php">
                                 <img src="Images/up.png" id="upArrow" />
                             </a>
-                            <a href="alexIntro.html">
+                            <a href="alexIntro.php">
                                 <img src="Images/down.png" id="downArrow" />
                             </a>
                             <p id="upvotesText">12</p>
