@@ -6,8 +6,8 @@
     <title>AskIT</title>
     <div id="header">
         <img src="Images/CiscoLogo.png" id="headerLogoPic" />
-        <button type="button" class="btn btn-default" onclick="location.href ='alexIntro.html'" style="position: absolute; margin-left: 160px; margin-top: 21px;">Home</button>
-        <button type="button" class="btn btn-default" onclick="location.href ='alexIntro.html'" style="position: absolute; margin-left: 580px; margin-top: 21px;">Edit Profile</button>
+        <button type="button" class="btn btn-default" onclick="location.href ='homeScreen.php'" style="position: absolute; margin-left: 160px; margin-top: 21px;">Home</button>
+        <button type="button" class="btn btn-default" onclick="location.href ='editProfile.php'" style="position: absolute; margin-left: 580px; margin-top: 21px;">Edit Profile</button>
         <table cellpadding="0px" cellspacing="0px">
             <tr>
                 <td id="searchBox">
@@ -22,34 +22,34 @@
 <body>
     <h1>Topics</h1>
     <ul>
-        <a href="alexIntro.html">
+        <a href="webTopic.html">
             <li>Web</li>
         </a>
-        <a href="alexIntro.html">
+        <a href="iOSTopic.html">
             <li>iOS</li>
         </a>
-        <a href="www.google.com">
+        <a href="androidTopic.html">
             <li>Android</li>
         </a>
-        <a href="www.google.com">
+        <a href="javaTopic.html">
             <li>Java</li>
         </a>
-        <a href="www.google.com">
+        <a href="iRiseTopic.html">
             <li>iRise</li>
         </a>
-        <a href="www.google.com">
+        <a href="tableauTopic.html">
             <li>Tableau</li>
         </a>
-        <a href="www.google.com">
+        <a href="agileTopic.html">
             <li>Agile</li>
         </a>
-        <a href="www.google.com">
+        <a href="UXTopic.html">
             <li>UX</li>
         </a>
-        <a href="www.google.com">
+        <a href="routersTopic.html">
             <li>Routers</li>
         </a>
-        <a href="www.google.com">
+        <a href="webExTopic.html">
             <li>WebEx Social</li>
         </a>
     </ul>   
@@ -65,12 +65,18 @@
 <form action = "processQuestion.php" name= "Question_Form" id="Question_Form" method = "post">
     <div id = "questionPage">
         <h1>Format Your Question:</h1>
-    </div> 
-    <div id = "questionBox">
         <textarea name= "questionBox"></textarea>
     </div>
+    <div id = "questionDescriptionBox">
+        <h1>Describe Your Question</h1>
+        <textarea name= "descriptionBox"></textarea>
+    </div>
+    <div id = "questionTagBox">
+        <h1>Tag Your Question:</h1>
+        <textarea name= "tagBox"></textarea>
+    </div>    
     <div>
-        <input id="questionButton" type="submit" value="Submit Question"></input>
+        <input class="button" type="image" src="Images/askITlongshort.jpg" style="position: absolute; margin-top: 655px; margin-left: 435px; height: 49px; width: 350px; border-radius: 5px;"></input>
     </div> <!-- closing div tag for layout row -->
 </form>    
 

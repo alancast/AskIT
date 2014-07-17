@@ -37,11 +37,11 @@ mysqli_query($link,$query);
 $question = mysqli_real_escape_string($link, $_POST['questionBox']);
 $description = mysqli_real_escape_string($link, $_POST['descriptionBox']);
 $tags = mysqli_real_escape_string($link, $_POST['tagBox']);
-//$username = mysqli_real_escape_string($_COOKIE['username']);
+$username = mysqli_real_escape_string($link, $_COOKIE['username']);
 
 
-$sql= "INSERT INTO my_db.Questions (Question, Description, tags)
-VALUES ('$question', '$description', '$tags')";
+$sql= "INSERT INTO my_db.Questions (Question, Description, tags, username)
+VALUES ('$question', '$description', '$tags', '$username')";
 // if (mysqli_query($link,$query)) {
 //   echo "Table persons created successfully";
 // } else {
@@ -50,6 +50,7 @@ VALUES ('$question', '$description', '$tags')";
 if (!mysqli_query($link,$sql)) {
   die('Error: ' . mysqli_error($sql));
 }
+
 
 mysqli_close($link);
 
