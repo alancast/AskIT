@@ -93,39 +93,34 @@
             <col width="75px" />
             <col width="40px" />
             <tbody>
-                <tr height="125px">
-                    <td>Absolutely</td>
-                    <td>allancas</td>
-                    <td id="upvotesCell">
-                        <div id="upvotesDiv">
-                            <a href="alexIntro.php">
-                                <img src="Images/up.png" id="upArrow" />
-                            </a>
-                            <a href="alexIntro.php">
-                                <img src="Images/down.png" id="downArrow" />
-                            </a>
-                            <p id="upvotesText">12</p>
-                        </div>
-                    </td>
-                </tr>
-                <tr height="125px">
-                    <td>Definitely</td>
-                    <td>Zoe Gizmo
-                        <br />June 21, 2012</td>
-                    <td class="text-success">Sure</td>
-                </tr>
-                <tr height="125px">
-                    <td>Crazy</td>
-                    <td>John Device
-                        <br />August 22, 2012</td>
-                    <td class="text-danger">No</td>
-                </tr>
-                <tr height="125px">
-                    <td>Basically</td>
-                    <td>Leonard Thing
-                        <br />June 21, 2012</td>
-                    <td class="text-success">Yep</td>
-                </tr>
+                <?php
+                $link=mysqli_connect("localhost","root","");
+                if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                }
+
+                $result = mysqli_query($link,"SELECT * FROM my_db.Questions WHERE tags='Agile'");
+
+                while($row = mysqli_fetch_assoc($result)) {
+                echo "<tr height=\"125px\">";
+                echo    "<td>".$row['Question']."</td>";
+                echo    "<td>".$row['username']."</td>";
+                echo    "<td id=\"upvotesCell\">";
+                echo        "<div id=\"upvotesDiv\">";
+                echo            "<a href=\"alexIntro.php\">";
+                echo                "<img src=\"Images/up.png\" id=\"upArrow\" />";
+                echo            "</a>";
+                echo            "<a href=\"alexIntro.php\">";
+                echo                "<img src=\"Images/down.png\" id=\"downArrow\" />";
+                echo            "</a>";
+                echo            "<p id=\"upvotesText\">".$row['up']."</p>";
+                echo        "</div>";
+                echo    "</td>";
+                echo "</tr>";
+
+                }
+                mysqli_close($link);
+                ?>
             </tbody>
         </table>
     </div>
@@ -154,30 +149,34 @@
             <col width="75px" />
             <col width="40px" />
             <tbody>
-                <tr height="125px">
-                    <td>Absolutely</td>
-                    <td>Leonard Thing
-                        <br />June 21, 2012</td>
-                    <td class="text-success">Yep</td>
-                </tr>
-                <tr height="125px">
-                    <td>Definitely</td>
-                    <td>Zoe Gizmo
-                        <br />June 21, 2012</td>
-                    <td class="text-success">Sure</td>
-                </tr>
-                <tr height="125px">
-                    <td>Crazy</td>
-                    <td>John Device
-                        <br />August 22, 2012</td>
-                    <td class="text-danger">No</td>
-                </tr>
-                <tr height="125px">
-                    <td>Basically</td>
-                    <td>Leonard Thing
-                        <br />June 21, 2012</td>
-                    <td class="text-success">Yep</td>
-                </tr>
+                <?php
+                $link=mysqli_connect("localhost","root","");
+                if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                }
+
+                $result = mysqli_query($link,"SELECT * FROM my_db.Questions WHERE tags='Agile'");
+
+                while($row = mysqli_fetch_assoc($result)) {
+                echo "<tr height=\"125px\">";
+                echo    "<td>".$row['Question']."</td>";
+                echo    "<td>".$row['username']."</td>";
+                echo    "<td id=\"upvotesCell\">";
+                echo        "<div id=\"upvotesDiv\">";
+                echo            "<a href=\"alexIntro.php\">";
+                echo                "<img src=\"Images/up.png\" id=\"upArrow\" />";
+                echo            "</a>";
+                echo            "<a href=\"alexIntro.php\">";
+                echo                "<img src=\"Images/down.png\" id=\"downArrow\" />";
+                echo            "</a>";
+                echo            "<p id=\"upvotesText\">".$row['up']."</p>";
+                echo        "</div>";
+                echo    "</td>";
+                echo "</tr>";
+
+                }
+                mysqli_close($link);
+                ?>
             </tbody>
         </table>
     </div>

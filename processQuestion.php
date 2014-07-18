@@ -3,7 +3,7 @@
 
 
 // Create connection
-$link=mysqli_connect("localhost","root","root");
+$link=mysqli_connect("localhost","root","");
 
 // Check connection
 if (mysqli_connect_errno()) {
@@ -28,7 +28,6 @@ $query = "CREATE TABLE IF NOT EXISTS my_db.".$name." (
     username CHAR(30),
     userid INT,
     up INT,
-    down INT,
     time TIMESTAMP,
     tags VARCHAR(5000))";
 mysqli_query($link,$query);
@@ -54,7 +53,7 @@ if (!mysqli_query($link,$sql)) {
 
 mysqli_close($link);
 
-header('Location: /homeScreen.php');
+header('Location: /AskIT/homeScreen.php');
 
 ?>
 

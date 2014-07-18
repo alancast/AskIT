@@ -3,7 +3,7 @@
 
 
 // Create connection
-$link=mysqli_connect("localhost","root","root");
+$link=mysqli_connect("localhost","root","");
 // Check connection
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -48,7 +48,7 @@ if (!mysqli_query($link,$insertuser)){
 //   echo "Error creating table: " . mysqli_error($link);
 // }
 
-header('Location: /homeScreen.php');
+header('Location: /AskIT/homeScreen.php');
 
 ?>
 
