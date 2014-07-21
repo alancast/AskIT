@@ -3,7 +3,7 @@
 
 
 // Create connection
-$link=mysqli_connect("localhost","root","");
+$link=mysqli_connect("localhost","root","root");
 
 // Check connection
 if (mysqli_connect_errno()) {

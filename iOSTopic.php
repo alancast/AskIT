@@ -94,7 +94,7 @@
             <col width="40px" />
             <tbody>
                 <?php
-                $link=mysqli_connect("localhost","root","");
+                $link=mysqli_connect("localhost","root","root");
                 if (mysqli_connect_errno()) {
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
@@ -150,7 +150,7 @@
             <col width="40px" />
             <tbody>
                 <?php
-                $link=mysqli_connect("localhost","root","");
+                $link=mysqli_connect("localhost","root","root");
                 if (mysqli_connect_errno()) {
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
