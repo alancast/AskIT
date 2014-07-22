@@ -96,7 +96,7 @@
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
 
-                $result = mysqli_query($link,"SELECT * FROM my_db.Questions");
+                $result = mysqli_query($link,"SELECT * FROM my_db.Questions ORDER BY up desc");
 
                 while($row = mysqli_fetch_assoc($result)) {
                 echo "<tr height=\"125px\">";

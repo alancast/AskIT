@@ -143,7 +143,7 @@
                 }
 
                 $username = mysqli_real_escape_string($link, $_COOKIE['username']);
-                $result = mysqli_query($link,"SELECT * FROM my_db.Questions WHERE username='".$username."'");
+                $result = mysqli_query($link,"SELECT * FROM my_db.Questions WHERE username='".$username."' ORDER BY up desc");
 
                 while($row = mysqli_fetch_assoc($result)) {
                 echo "<tr height=\"125px\">";
