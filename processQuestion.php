@@ -21,26 +21,30 @@ mysqli_query($link,$db);
 //Create Table for question if it doesn't already exist
 $name = mysql_real_escape_string("Questions");
 $query = "CREATE TABLE IF NOT EXISTS my_db.".$name." (
-    PID INT NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY(PID),
-    Question VARCHAR(5000),
-    Description VARCHAR(5000),
-    username CHAR(30),
-    userid INT,
-    up INT,
-    time TIMESTAMP,
-    tags VARCHAR(5000))";
+    QID INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY(QID),
+    Question VARCHAR(5000) NOT NULL,
+    Description VARCHAR(5000) NOT NULL,
+    Username CHAR(20) NOT NULL,
+    Up INT NOT NULL,
+    Time TIMESTAMP,
+    Tags VARCHAR(5000),
+    FOREIGN KEY (Username) REFERENCES Users(Username))";
 mysqli_query($link,$query);
 
 // escape variables for security
 $question = mysqli_real_escape_string($link, $_POST['questionBox']);
 $description = mysqli_real_escape_string($link, $_POST['descriptionBox']);
+if(is_null($description))
+{
+    $description = "";
+}
 $tags = mysqli_real_escape_string($link, $_POST['tagBox']);
 $username = mysqli_real_escape_string($link, $_COOKIE['username']);
 
 
-$sql= "INSERT INTO my_db.Questions (Question, Description, tags, username)
-VALUES ('$question', '$description', '$tags', '$username')";
+$sql= "INSERT INTO my_db.Questions (Question, Description, Tags, Username, Up)
+VALUES ('$question', '$description', '$tags', '$username', 0)";
 // if (mysqli_query($link,$query)) {
 //   echo "Table persons created successfully";
 // } else {

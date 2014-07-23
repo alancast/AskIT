@@ -393,21 +393,21 @@ td {
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
-#questionPage{
+#questionPage {
     position: absolute;
     margin-top: 85px;
     margin-left: 260px;
     width: 650px;
     height: 130px;
 }
-#questionPage h1{
+#questionPage h1 {
     margin: 0px;
     height: 30px;
     width: 440px;
     font-size: 24px;
     border-bottom: 3px solid #0096d6;
 }
-#questionPage textarea{
+#questionPage textarea {
     width: 650px;
     height: 90px;
     font-size: 16px;
@@ -416,21 +416,21 @@ td {
     overflow-y: scroll;
     overflow-x: auto;
 }
-#questionDescriptionBox{
+#questionDescriptionBox {
     position: absolute;
     margin-top: 225px;
     margin-left: 260px;
     width: 650px;
     height: 340px;
 }
-#questionDescriptionBox h1{
+#questionDescriptionBox h1 {
     margin: 0px;
     height: 30px;
     width: 440px;
     font-size: 24px;
     border-bottom: 3px solid #0096d6;
 }
-#questionDescriptionBox textarea{
+#questionDescriptionBox textarea {
     width: 650px;
     height: 300px;
     margin-top: 40px;
@@ -439,21 +439,21 @@ td {
     overflow-y: scroll;
     overflow-x: auto;
 }
-#questionTagBox{
+#questionTagBox {
     position: absolute;
     margin-top: 575px;
     margin-left: 260px;
     width: 650px;
     height: 70px;
 }
-#questionTagBox h1{
+#questionTagBox h1 {
     margin: 0px;
     height: 30px;
     width: 440px;
     font-size: 24px;
     border-bottom: 3px solid #0096d6;
 }
-#questionTagBox textarea{
+#questionTagBox textarea {
     width: 650px;
     height: 30px;
     margin-top: 40px;
@@ -462,34 +462,161 @@ td {
     overflow-y: scroll;
     overflow-x: auto;
 }
-td button {
-    background:none!important;
-     border:none; 
-     padding:0!important;
+#scrollableHomeFeed td button {
+    background: none!important;
+    border: none;
+    padding: 0!important;
     /*border is optional*/
-     border-bottom:1px solid #444; 
-     cursor: pointer;
+    border-bottom: 0px solid #444;
+    cursor: pointer;
+    width: 550px;
+    height: 125px;
+    text-align: left;
+    outline: none;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    text-overflow: ellipsis;
 }
-#answerTitle{
+#unansweredScrollable td button {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*border is optional*/
+    border-bottom: 0px solid #444;
+    cursor: pointer;
+    width: 200px;
+    height: 125px;
+    text-align: left;
+    outline: none;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    text-overflow: ellipsis;
+}
+#recentlyAnsweredScrollable td button {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*border is optional*/
+    border-bottom: 0px solid #444;
+    cursor: pointer;
+    width: 200px;
+    height: 125px;
+    text-align: left;
+    outline: none;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    text-overflow: ellipsis;
+}
+#topicUnansweredScrollable td button {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*border is optional*/
+    border-bottom: 0px solid #444;
+    cursor: pointer;
+    width: 200px;
+    height: 125px;
+    text-align: left;
+    outline: none;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    text-overflow: ellipsis;
+}
+#topicRecentlyAnsweredScrollable td button {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*border is optional*/
+    border-bottom: 0px solid #444;
+    cursor: pointer;
+    width: 200px;
+    height: 125px;
+    text-align: left;
+    outline: none;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    text-overflow: ellipsis;
+}
+#questionsAskedScrollable td button {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*border is optional*/
+    border-bottom: 0px solid #444;
+    cursor: pointer;
+    width: 155px;
+    height: 125px;
+    text-align: left;
+    outline: none;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    text-overflow: ellipsis;
+}
+#questionsAnsweredScrollable td button {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*border is optional*/
+    border-bottom: 0px solid #444;
+    cursor: pointer;
+    width: 155px;
+    height: 125px;
+    text-align: left;
+    outline: none;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    text-overflow: ellipsis;
+}
+#answerTitle {
     position: absolute;
     margin-top: 85px;
     margin-left: 260px;
     width: 650px;
     height: 130px;
 }
-#answerTitle h1{
+#answerTitle h1 {
     margin: 0px;
     height: 50px;
     width: 440px;
     font-size: 32px;
     border-bottom: 3px solid #0096d6;
 }
-#answerTitle h2{
+#answerTitle h2 {
     margin-top: 60px;
     font-size: 24px;
 }
-#answerTitle h3{
+#answerTitle h3 {
     margin-top: 0px;
     margin-left: 200px;
     font-size: 12px;
+}
+#questionAnswerBox {
+    position: absolute;
+    margin-top: 225px;
+    margin-left: 260px;
+    width: 650px;
+    height: 340px;
+}
+#questionAnswerBox h1 {
+    margin: 0px;
+    height: 30px;
+    width: 440px;
+    font-size: 24px;
+    border-bottom: 3px solid #0096d6;
+}
+#questionAnswerBox textarea {
+    width: 650px;
+    height: 300px;
+    margin-top: 40px;
+    font-size: 12px;
+    resize: none;
+    overflow-y: scroll;
+    overflow-x: auto;
 }

@@ -99,12 +99,17 @@
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
 
-                $result = mysqli_query($link,"SELECT * FROM my_db.Questions WHERE tags='Agile' ORDER BY up desc");
+                $result = mysqli_query($link,"SELECT * FROM my_db.Questions WHERE Tags='Agile' AND NOT EXISTS (SELECT * FROM my_db.Answers WHERE my_db.Answers.QID = my_db.Questions.QID) ORDER BY Up desc");
 
                 while($row = mysqli_fetch_assoc($result)) {
                 echo "<tr height=\"125px\">";
-                echo    "<td>".$row['Question']."</td>";
-                echo    "<td>".$row['username']."</td>";
+                echo "<form action = \"AnswerQuestion.php\" name = \"AnswerForm\" id = \"AnswerForm\" method = \"post\"> ";
+                echo "<input type= \"hidden\" name=\"question\" value = \"".$row['Question']."\"></input>";
+                echo "<input type= \"hidden\" name=\"questionsUser\" value = \"".$row['Username']."\"></input>";
+                echo "<input type= \"hidden\" name=\"QID\" value = \"".$row['QID']."\"></input>";                
+                echo    "<td> <button class = \"button\"  type = \"submit\">".$row['Question']."</button></td>";
+                echo "</form>";
+                echo    "<td>".$row['Username']."</td>";
                 echo    "<td id=\"upvotesCell\">";
                 echo        "<div id=\"upvotesDiv\">";
                 echo            "<a href=\"alexIntro.php\">";
@@ -113,7 +118,7 @@
                 echo            "<a href=\"alexIntro.php\">";
                 echo                "<img src=\"Images/down.png\" id=\"downArrow\" />";
                 echo            "</a>";
-                echo            "<p id=\"upvotesText\">".$row['up']."</p>";
+                echo            "<p id=\"upvotesText\">".$row['Up']."</p>";
                 echo        "</div>";
                 echo    "</td>";
                 echo "</tr>";
@@ -155,12 +160,17 @@
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
 
-                $result = mysqli_query($link,"SELECT * FROM my_db.Questions WHERE tags='Agile' ORDER BY up desc");
+                $result = mysqli_query($link,"SELECT DISTINCT my_db.Questions.Question, my_db.Questions.Username, my_db.Questions.Up FROM my_db.Questions join my_db.Answers USING(QID) WHERE Tags='Agile' ORDER BY my_db.Questions.Up desc");
 
                 while($row = mysqli_fetch_assoc($result)) {
                 echo "<tr height=\"125px\">";
-                echo    "<td>".$row['Question']."</td>";
-                echo    "<td>".$row['username']."</td>";
+                echo "<form action = \"AnswerQuestion.php\" name = \"AnswerForm\" id = \"AnswerForm\" method = \"post\"> ";
+                echo "<input type= \"hidden\" name=\"question\" value = \"".$row['Question']."\"></input>";
+                echo "<input type= \"hidden\" name=\"questionsUser\" value = \"".$row['Username']."\"></input>";
+                echo "<input type= \"hidden\" name=\"QID\" value = \"".$row['QID']."\"></input>";                
+                echo    "<td> <button class = \"button\"  type = \"submit\">".$row['Question']."</button></td>";
+                echo "</form>";
+                echo    "<td>".$row['Username']."</td>";
                 echo    "<td id=\"upvotesCell\">";
                 echo        "<div id=\"upvotesDiv\">";
                 echo            "<a href=\"alexIntro.php\">";
@@ -169,7 +179,7 @@
                 echo            "<a href=\"alexIntro.php\">";
                 echo                "<img src=\"Images/down.png\" id=\"downArrow\" />";
                 echo            "</a>";
-                echo            "<p id=\"upvotesText\">".$row['up']."</p>";
+                echo            "<p id=\"upvotesText\">".$row['Up']."</p>";
                 echo        "</div>";
                 echo    "</td>";
                 echo "</tr>";

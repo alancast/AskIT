@@ -20,20 +20,22 @@ mysqli_query($link,$db);
 //Create Table for user if it doesn't already exist
 $users = mysql_real_escape_string("Users");
 $query = "CREATE TABLE IF NOT EXISTS my_db.".$users." (
-    PID INT NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY(PID),
-    username CHAR(20),
+    Username CHAR(20) NOT NULL,
     JobTitle CHAR(20),
     Expertise VARCHAR(1000),
     Skills VARCHAR(1000),
-    Interests VARCHAR(1000))";
+    Interests VARCHAR(1000),
+    PRIMARY KEY(Username))";
 if(!mysqli_query($link,$query)){
 	echo "error creating table";
 }
 
 $username = mysql_real_escape_string($_POST['username_input']);
-$insertuser = "INSERT IGNORE INTO my_db.Users (username) 
-VALUES ('$username')";
+$result = mysqli_query($link,"SELECT * FROM my_db.Users WHERE Username = '".$username."'");
+if (mysql_num_rows($result) == 0)
+{
+    $insertuser = "INSERT IGNORE INTO my_db.Users (Username) VALUES ('$username')";
+}
 // echo "test after row creation";
 if (!mysqli_query($link,$insertuser)){
 	echo "row not created successfully";

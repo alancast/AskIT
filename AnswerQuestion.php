@@ -72,18 +72,15 @@
         }
         echo "<h2>".$_POST['question']." </h2>";
         echo "<h3> Asked by: ".$_POST['questionsUser']."</h3>";
+        echo "<input type= \"hidden\" name=\"QID\" value = \"".$_POST['QID']."\"></input>";
         ?>
     </div>
-    <div id = "questionDescriptionBox">
-        <h1>Describe Your Question</h1>
-        <textarea name= "descriptionBox"></textarea>
-    </div>
-    <div id = "questionTagBox">
-        <h1>Tag Your Question:</h1>
-        <textarea name= "tagBox"></textarea>
-    </div>    
+    <div id = "questionAnswerBox">
+        <h1>Answer</h1>
+        <textarea name= "answerBox"></textarea>
+    </div>  
     <div>
-        <input class="button" type="image" src="Images/askITlongshort.jpg" style="position: absolute; margin-top: 655px; margin-left: 435px; height: 49px; width: 350px; border-radius: 5px;"></input>
+        <input class="button" type="image" src="Images/askITlongshort.jpg" style="position: absolute; margin-top: 585px; margin-left: 435px; height: 49px; width: 350px; border-radius: 5px;"></input>
     </div> <!-- closing div tag for layout row -->
 </form>    
 

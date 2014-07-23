@@ -96,17 +96,18 @@
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
 
-                $result = mysqli_query($link,"SELECT * FROM my_db.Questions ORDER BY up desc");
+                $result = mysqli_query($link,"SELECT * FROM my_db.Questions ORDER BY Up desc");
 
                 while($row = mysqli_fetch_assoc($result)) {
 
                 echo "<tr height=\"125px\">";
                 echo "<form action = \"AnswerQuestion.php\" name = \"AnswerForm\" id = \"AnswerForm\" method = \"post\"> ";
                 echo "<input type= \"hidden\" name=\"question\" value = \"".$row['Question']."\"></input>";
-                echo "<input type= \"hidden\" name=\"questionsUser\" value = \"".$row['username']."\"></input>";                
+                echo "<input type= \"hidden\" name=\"questionsUser\" value = \"".$row['Username']."\"></input>";
+                echo "<input type= \"hidden\" name=\"QID\" value = \"".$row['QID']."\"></input>";                
                 echo    "<td> <button class = \"button\"  type = \"submit\">".$row['Question']."</button></td>";
                 echo "</form>";
-                echo    "<td>".$row['username']."</td>";
+                echo    "<td>".$row['Username']."</td>";
                 echo    "<td id=\"upvotesCell\">";
                 echo        "<div id=\"upvotesDiv\">";
                 echo            "<a href=\"alexIntro.php\">";
@@ -115,7 +116,7 @@
                 echo            "<a href=\"alexIntro.php\">";
                 echo                "<img src=\"Images/down.png\" id=\"downArrow\" />";
                 echo            "</a>";
-                echo            "<p id=\"upvotesText\">".$row['up']."</p>";
+                echo            "<p id=\"upvotesText\">".$row['Up']."</p>";
                 echo        "</div>";
                 echo    "</td>";
                 echo "</tr>";
@@ -151,39 +152,39 @@
             <col width="75px" />
             <col width="40px" />
             <tbody>
-                <tr height="125px">
-                    <td>Absolutely</td>
-                    <td>allancas</td>
-                    <td id="upvotesCell">
-                        <div id="upvotesDiv">
-                            <a href="alexIntro.php">
-                                <img src="Images/up.png" id="upArrow" />
-                            </a>
-                            <a href="alexIntro.php">
-                                <img src="Images/down.png" id="downArrow" />
-                            </a>
-                            <p id="upvotesText">12</p>
-                        </div>
-                    </td>
-                </tr>
-                <tr height="125px">
-                    <td>Definitely</td>
-                    <td>Zoe Gizmo
-                        <br />June 21, 2012</td>
-                    <td class="text-success">Sure</td>
-                </tr>
-                <tr height="125px">
-                    <td>Crazy</td>
-                    <td>John Device
-                        <br />August 22, 2012</td>
-                    <td class="text-danger">No</td>
-                </tr>
-                <tr height="125px">
-                    <td>Basically</td>
-                    <td>Leonard Thing
-                        <br />June 21, 2012</td>
-                    <td class="text-success">Yep</td>
-                </tr>
+                <?php
+                $link=mysqli_connect("localhost","root","root");
+                if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                }
+
+                $result = mysqli_query($link,"SELECT * FROM my_db.Questions WHERE NOT EXISTS (SELECT * FROM my_db.Answers WHERE my_db.Answers.QID = my_db.Questions.QID) ORDER BY Up desc");
+
+                while($row = mysqli_fetch_assoc($result)) {
+                echo "<tr height=\"125px\">";
+                echo "<form action = \"AnswerQuestion.php\" name = \"AnswerForm\" id = \"AnswerForm\" method = \"post\"> ";
+                echo "<input type= \"hidden\" name=\"question\" value = \"".$row['Question']."\"></input>";
+                echo "<input type= \"hidden\" name=\"questionsUser\" value = \"".$row['Username']."\"></input>";
+                echo "<input type= \"hidden\" name=\"QID\" value = \"".$row['QID']."\"></input>";                
+                echo    "<td> <button class = \"button\"  type = \"submit\">".$row['Question']."</button></td>";
+                echo "</form>";
+                echo    "<td>".$row['Username']."</td>";
+                echo    "<td id=\"upvotesCell\">";
+                echo        "<div id=\"upvotesDiv\">";
+                echo            "<a href=\"alexIntro.php\">";
+                echo                "<img src=\"Images/up.png\" id=\"upArrow\" />";
+                echo            "</a>";
+                echo            "<a href=\"alexIntro.php\">";
+                echo                "<img src=\"Images/down.png\" id=\"downArrow\" />";
+                echo            "</a>";
+                echo            "<p id=\"upvotesText\">".$row['Up']."</p>";
+                echo        "</div>";
+                echo    "</td>";
+                echo "</tr>";
+
+                }
+                mysqli_close($link);
+                ?>
             </tbody>
         </table>
     </div>
@@ -212,30 +213,39 @@
             <col width="75px" />
             <col width="40px" />
             <tbody>
-                <tr height="125px">
-                    <td>Absolutely</td>
-                    <td>Leonard Thing
-                        <br />June 21, 2012</td>
-                    <td class="text-success">Yep</td>
-                </tr>
-                <tr height="125px">
-                    <td>Definitely</td>
-                    <td>Zoe Gizmo
-                        <br />June 21, 2012</td>
-                    <td class="text-success">Sure</td>
-                </tr>
-                <tr height="125px">
-                    <td>Crazy</td>
-                    <td>John Device
-                        <br />August 22, 2012</td>
-                    <td class="text-danger">No</td>
-                </tr>
-                <tr height="125px">
-                    <td>Basically</td>
-                    <td>Leonard Thing
-                        <br />June 21, 2012</td>
-                    <td class="text-success">Yep</td>
-                </tr>
+                <?php
+                $link=mysqli_connect("localhost","root","root");
+                if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                }
+
+                $result = mysqli_query($link,"SELECT DISTINCT my_db.Questions.Question, my_db.Questions.Username, my_db.Questions.Up FROM my_db.Questions join my_db.Answers USING(QID) ORDER BY my_db.Questions.Up desc");
+
+                while($row = mysqli_fetch_assoc($result)) {
+                echo "<tr height=\"125px\">";
+                echo "<form action = \"AnswerQuestion.php\" name = \"AnswerForm\" id = \"AnswerForm\" method = \"post\"> ";
+                echo "<input type= \"hidden\" name=\"question\" value = \"".$row['Question']."\"></input>";
+                echo "<input type= \"hidden\" name=\"questionsUser\" value = \"".$row['Username']."\"></input>";
+                echo "<input type= \"hidden\" name=\"QID\" value = \"".$row['QID']."\"></input>";                
+                echo    "<td> <button class = \"button\"  type = \"submit\">".$row['Question']."</button></td>";
+                echo "</form>";
+                echo    "<td>".$row['Username']."</td>";
+                echo    "<td id=\"upvotesCell\">";
+                echo        "<div id=\"upvotesDiv\">";
+                echo            "<a href=\"alexIntro.php\">";
+                echo                "<img src=\"Images/up.png\" id=\"upArrow\" />";
+                echo            "</a>";
+                echo            "<a href=\"alexIntro.php\">";
+                echo                "<img src=\"Images/down.png\" id=\"downArrow\" />";
+                echo            "</a>";
+                echo            "<p id=\"upvotesText\">".$row['Up']."</p>";
+                echo        "</div>";
+                echo    "</td>";
+                echo "</tr>";
+
+                }
+                mysqli_close($link);
+                ?>
             </tbody>
         </table>
     </div>
@@ -246,29 +256,3 @@
 <script src="https://ecmx-active.cisco.com/web/fw/tools/iwe/asf-app/app-wrapper/1.0/js/cisco-bootstrap-bundle.js"></script>
 
 </html>
-
-<?php function goToAnswerPage($question){
- 
- // Create connection
-$link=mysqli_connect("localhost","root","root");
-// Check connection
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-
-//Create database if it doesn't already exist
-$db="CREATE DATABASE IF NOT EXISTS my_db";
-mysqli_query($link,$db);
-
-
- $number_of_days = 30 ;
- $date_of_expiry = time() + 60 * 60 * 24 * $number_of_days ;
- setcookie("questionTemp",$question,$date_of_expiry);
-// if (mysqli_query($link,$query)) {
-//   echo "Table persons created successfully";
-// } else {
-//   echo "Error creating table: " . mysqli_error($link);
-// }
-
-header('Location: /AnswerPage.php');
-}

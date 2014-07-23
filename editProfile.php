@@ -143,11 +143,16 @@
                 }
 
                 $username = mysqli_real_escape_string($link, $_COOKIE['username']);
-                $result = mysqli_query($link,"SELECT * FROM my_db.Questions WHERE username='".$username."' ORDER BY up desc");
+                $result = mysqli_query($link,"SELECT * FROM my_db.Questions WHERE Username='".$username."' ORDER BY Up desc");
 
                 while($row = mysqli_fetch_assoc($result)) {
                 echo "<tr height=\"125px\">";
-                echo    "<td>".$row['Question']."</td>";
+                echo "<form action = \"AnswerQuestion.php\" name = \"AnswerForm\" id = \"AnswerForm\" method = \"post\"> ";
+                echo "<input type= \"hidden\" name=\"question\" value = \"".$row['Question']."\"></input>";
+                echo "<input type= \"hidden\" name=\"questionsUser\" value = \"".$row['Username']."\"></input>";
+                echo "<input type= \"hidden\" name=\"QID\" value = \"".$row['QID']."\"></input>";                
+                echo    "<td> <button class = \"button\"  type = \"submit\">".$row['Question']."</button></td>";
+                echo "</form>";
                 echo    "<td id=\"upvotesCell\">";
                 echo        "<div id=\"upvotesDiv\">";
                 echo            "<a href=\"alexIntro.php\">";
@@ -156,7 +161,7 @@
                 echo            "<a href=\"alexIntro.php\">";
                 echo                "<img src=\"Images/down.png\" id=\"downArrow\" />";
                 echo            "</a>";
-                echo            "<p id=\"upvotesText\">".$row['up']."</p>";
+                echo            "<p id=\"upvotesText\">".$row['Up']."</p>";
                 echo        "</div>";
                 echo    "</td>";
                 echo "</tr>";
@@ -189,62 +194,39 @@
             <col width="163px" />
             <col width="40px" />
             <tbody>
-                <tr height="125px">
-                    <td>Absolutely</td>
-                    <td id="upvotesCell">
-                        <div id="upvotesDiv">
-                            <a href="alexIntro.php">
-                                <img src="Images/up.png" id="upArrow" />
-                            </a>
-                            <a href="alexIntro.php">
-                                <img src="Images/down.png" id="downArrow" />
-                            </a>
-                            <p id="upvotesText">12</p>
-                        </div>
-                    </td>
-                </tr>
-                <tr height="125px">
-                    <td>Definitely</td>
-                    <td id="upvotesCell">
-                        <div id="upvotesDiv">
-                            <a href="alexIntro.php">
-                                <img src="Images/up.png" id="upArrow" />
-                            </a>
-                            <a href="alexIntro.php">
-                                <img src="Images/down.png" id="downArrow" />
-                            </a>
-                            <p id="upvotesText">12</p>
-                        </div>
-                    </td>
-                </tr>
-                <tr height="125px">
-                    <td>Crazy</td>
-                    <td id="upvotesCell">
-                        <div id="upvotesDiv">
-                            <a href="alexIntro.php">
-                                <img src="Images/up.png" id="upArrow" />
-                            </a>
-                            <a href="alexIntro.php">
-                                <img src="Images/down.png" id="downArrow" />
-                            </a>
-                            <p id="upvotesText">12</p>
-                        </div>
-                    </td>
-                </tr>
-                <tr height="125px">
-                    <td>Basically</td>
-                    <td id="upvotesCell">
-                        <div id="upvotesDiv">
-                            <a href="alexIntro.php">
-                                <img src="Images/up.png" id="upArrow" />
-                            </a>
-                            <a href="alexIntro.php">
-                                <img src="Images/down.png" id="downArrow" />
-                            </a>
-                            <p id="upvotesText">12</p>
-                        </div>
-                    </td>
-                </tr>
+                <?php
+                $link=mysqli_connect("localhost","root","root");
+                if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                }
+
+                $username = mysqli_real_escape_string($link, $_COOKIE['username']);
+                $result = mysqli_query($link,"SELECT * FROM my_db.Questions join my_db.Answers USING (QID) WHERE my_db.Answers.Username='".$username."' ORDER BY my_db.Answers.Up desc");
+
+                while($row = mysqli_fetch_assoc($result)) {
+                echo "<tr height=\"125px\">";
+                echo "<form action = \"AnswerQuestion.php\" name = \"AnswerForm\" id = \"AnswerForm\" method = \"post\"> ";
+                echo "<input type= \"hidden\" name=\"question\" value = \"".$row['Question']."\"></input>";
+                echo "<input type= \"hidden\" name=\"questionsUser\" value = \"".$row['Username']."\"></input>";
+                echo "<input type= \"hidden\" name=\"QID\" value = \"".$row['QID']."\"></input>";                
+                echo    "<td> <button class = \"button\"  type = \"submit\">".$row['Question']."</button></td>";
+                echo "</form>";
+                echo    "<td id=\"upvotesCell\">";
+                echo        "<div id=\"upvotesDiv\">";
+                echo            "<a href=\"alexIntro.php\">";
+                echo                "<img src=\"Images/up.png\" id=\"upArrow\" />";
+                echo            "</a>";
+                echo            "<a href=\"alexIntro.php\">";
+                echo                "<img src=\"Images/down.png\" id=\"downArrow\" />";
+                echo            "</a>";
+                echo            "<p id=\"upvotesText\">".$row['Up']."</p>";
+                echo        "</div>";
+                echo    "</td>";
+                echo "</tr>";
+
+                }
+                mysqli_close($link);
+                ?>
             </tbody>
         </table>
     </div>
