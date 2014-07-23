@@ -99,8 +99,13 @@
                 $result = mysqli_query($link,"SELECT * FROM my_db.Questions ORDER BY up desc");
 
                 while($row = mysqli_fetch_assoc($result)) {
+
                 echo "<tr height=\"125px\">";
-                echo    "<td>".$row['Question']."</td>";
+                echo "<form action = \"AnswerQuestion.php\" name = \"AnswerForm\" id = \"AnswerForm\" method = \"post\"> ";
+                echo "<input type= \"hidden\" name=\"question\" value = \"".$row['Question']."\"></input>";
+                echo "<input type= \"hidden\" name=\"questionsUser\" value = \"".$row['username']."\"></input>";                
+                echo    "<td> <button class = \"button\"  type = \"submit\">".$row['Question']."</button></td>";
+                echo "</form>";
                 echo    "<td>".$row['username']."</td>";
                 echo    "<td id=\"upvotesCell\">";
                 echo        "<div id=\"upvotesDiv\">";
@@ -241,3 +246,29 @@
 <script src="https://ecmx-active.cisco.com/web/fw/tools/iwe/asf-app/app-wrapper/1.0/js/cisco-bootstrap-bundle.js"></script>
 
 </html>
+
+<?php function goToAnswerPage($question){
+ 
+ // Create connection
+$link=mysqli_connect("localhost","root","root");
+// Check connection
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+//Create database if it doesn't already exist
+$db="CREATE DATABASE IF NOT EXISTS my_db";
+mysqli_query($link,$db);
+
+
+ $number_of_days = 30 ;
+ $date_of_expiry = time() + 60 * 60 * 24 * $number_of_days ;
+ setcookie("questionTemp",$question,$date_of_expiry);
+// if (mysqli_query($link,$query)) {
+//   echo "Table persons created successfully";
+// } else {
+//   echo "Error creating table: " . mysqli_error($link);
+// }
+
+header('Location: /AnswerPage.php');
+}
