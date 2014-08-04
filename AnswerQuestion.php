@@ -134,7 +134,7 @@
         <textarea name= "answerBox"></textarea>
     </div>  
     <div>
-        <input class="button" type="image" src="Images/askITlongshort.jpg" style="position: absolute; margin-top: 585px; margin-left: 435px; height: 49px; width: 350px; border-radius: 5px;"></input>
+        <input class="button" type="image" src="Images/AnswerIT.jpg" style="position: absolute; margin-top: 585px; margin-left: 435px; height: 49px; width: 350px; border-radius: 5px;"></input>
     </div> <!-- closing div tag for layout row -->
 </form>    
 
