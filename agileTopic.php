@@ -41,7 +41,7 @@
             <li>Tableau</li>
         </a>
         <a href="agileTopic.php">
-            <li>Agile</li>
+            <li>GSQS</li>
         </a>
         <a href="UXTopic.php">
             <li>UX</li>
@@ -66,7 +66,7 @@
         </a>
     </div>
     <p style="height:30px; width:700px; position:absolute; margin-top: 210px; margin-left: 250px; font-size: 40px; text-align: center;">
-        #Agile
+        #GSQS
     </p>
     <p style="height:30px; width:340px; position:absolute; margin-top: 250px; margin-left: 250px; font-size: 24px; text-align: center;">
         Unanswered
@@ -99,7 +99,7 @@
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
 
-                $result = mysqli_query($link,"SELECT * FROM my_db.Questions WHERE Tags='Agile' AND NOT EXISTS (SELECT * FROM my_db.Answers WHERE my_db.Answers.QID = my_db.Questions.QID) ORDER BY Up desc");
+                $result = mysqli_query($link,"SELECT * FROM my_db.Questions WHERE Tags='GSQS' AND NOT EXISTS (SELECT * FROM my_db.Answers WHERE my_db.Answers.QID = my_db.Questions.QID) ORDER BY Up desc");
 
                 while($row = mysqli_fetch_assoc($result)) {
                 echo "<tr height=\"125px\">";
@@ -160,7 +160,7 @@
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
 
-                $result = mysqli_query($link,"SELECT DISTINCT my_db.Questions.Question, my_db.Questions.Username, my_db.Questions.Up, my_db.Questions.QID FROM my_db.Questions join my_db.Answers USING(QID) WHERE Tags='Agile' ORDER BY my_db.Questions.Up desc");
+                $result = mysqli_query($link,"SELECT DISTINCT my_db.Questions.Question, my_db.Questions.Username, my_db.Questions.Up, my_db.Questions.QID FROM my_db.Questions join my_db.Answers USING(QID) WHERE Tags='GSQS' ORDER BY my_db.Questions.Up desc");
 
                 while($row = mysqli_fetch_assoc($result)) {
                 echo "<tr height=\"125px\">";

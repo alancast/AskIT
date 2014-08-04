@@ -41,7 +41,7 @@
             <li>Tableau</li>
         </a>
         <a href="agileTopic.php">
-            <li>Agile</li>
+            <li>GSQS</li>
         </a>
         <a href="UXTopic.php">
             <li>UX</li>
