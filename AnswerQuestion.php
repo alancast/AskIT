@@ -60,6 +60,60 @@
     	<div id="trendingSidebarBackground">
     	</div>
     </div>
+    <div id="scrollableAnswersHeader">
+        <table class="table table-striped table-bordered" style="table-layout: fixed; word-wrap: break-word; overflow: hidden; width: 688px;">
+            <col width="557px" />
+            <col width="75px" />
+            <col width="40px" />
+            <col width="16px" />
+            <thead>
+                <tr>
+                    <th>Answer</th>
+                    <th>User</th>
+                    <th>Up</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div id="scrollableAnswersFeed">
+        <table class="table table-striped table-hover" style="table-layout: fixed; width: 672px; font-size: 13px;">
+            <col width="557px" />
+            <col width="75px" />
+            <col width="40px" />
+            <tbody>
+                <?php
+                $link=mysqli_connect("localhost","root","root");
+                if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                }
+
+                $result = mysqli_query($link,"SELECT * FROM my_db.Answers WHERE QID =".$_POST['QID']." ORDER BY Up desc");
+
+                while($row = mysqli_fetch_assoc($result)) {
+
+                echo "<tr height=\"125px\">";            
+                echo    "<td>".$row['Answer']."</td>";
+                echo    "<td>".$row['Username']."</td>";
+                echo    "<td id=\"upvotesCell\">";
+                echo        "<div id=\"upvotesDiv\">";
+                echo            "<a href=\"alexIntro.php\">";
+                echo                "<img src=\"Images/up.png\" id=\"upArrow\" />";
+                echo            "</a>";
+                echo            "<a href=\"alexIntro.php\">";
+                echo                "<img src=\"Images/down.png\" id=\"downArrow\" />";
+                echo            "</a>";
+                echo            "<p id=\"upvotesText\">".$row['Up']."</p>";
+                echo        "</div>";
+                echo    "</td>";
+                echo "</tr>";
+
+                }
+                mysqli_close($link);
+                ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 <form action = "processAnswer.php" name= "Answer_Form" id="Answer_Form" method = "post">
@@ -83,7 +137,6 @@
         <input class="button" type="image" src="Images/askITlongshort.jpg" style="position: absolute; margin-top: 585px; margin-left: 435px; height: 49px; width: 350px; border-radius: 5px;"></input>
     </div> <!-- closing div tag for layout row -->
 </form>    
-
 
 <div id="footer">
     <img src="Images/FooterPic.png" id="footerPic" />

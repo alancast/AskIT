@@ -160,7 +160,7 @@
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
 
-                $result = mysqli_query($link,"SELECT DISTINCT my_db.Questions.Question, my_db.Questions.Username, my_db.Questions.Up FROM my_db.Questions join my_db.Answers USING(QID) WHERE Tags='UX' ORDER BY my_db.Questions.Up desc");
+                $result = mysqli_query($link,"SELECT DISTINCT my_db.Questions.Question, my_db.Questions.Username, my_db.Questions.Up, my_db.Questions.QID FROM my_db.Questions join my_db.Answers USING(QID) WHERE Tags='UX' ORDER BY my_db.Questions.Up desc");
 
                 while($row = mysqli_fetch_assoc($result)) {
                 echo "<tr height=\"125px\">";

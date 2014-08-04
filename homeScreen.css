@@ -107,11 +107,6 @@ body ul li:before {
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
-td {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
 #unansweredScrollableHeader {
     position: absolute;
     margin-top: 525px;
@@ -612,11 +607,32 @@ td {
     border-bottom: 3px solid #0096d6;
 }
 #questionAnswerBox textarea {
-    width: 650px;
+    width: 690px;
     height: 300px;
     margin-top: 40px;
     font-size: 12px;
     resize: none;
     overflow-y: scroll;
     overflow-x: auto;
+}
+#scrollableAnswersHeader {
+    position: absolute;
+    margin-top: 655px;
+    margin-left: 260px;
+    width: 690px;
+    height: 32px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+#scrollableAnswersFeed {
+    position: absolute;
+    margin-top: 687px;
+    margin-left: 260px;
+    width: 690px;
+    height: 233px;
+    overflow: auto;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
